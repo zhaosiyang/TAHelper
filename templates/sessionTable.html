@@ -1,0 +1,22 @@
+<tr>
+    <th>Session ID</th>
+    <th>Location</th>
+    <th>Time Period</th>
+    <th></th>
+</tr>
+{% for entry in entries %} 
+    <tr>
+        <td>{{entry.sessionID}}</td>
+        {% if entry.location %}
+            <td>{{entry.location}}</td>
+        {% else %}
+            <td>-</td>
+        {% endif %}
+        <td>{{entry.startTime.strftime("%y-%m-%d,%H:%M")}} - {{entry.endTime.strftime("%y-%m-%d,%H:%M")}}</td>
+        <td><div>
+            <a href="/studentWorkingPage?sessionID={{entry.sessionID}}">
+               <button class="btn btn-primary full_size" id="{{entry.sessionID}}">Join</button> 
+            </a>    
+        </div></td>
+    </tr>
+{% endfor %}

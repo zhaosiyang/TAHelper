@@ -1,0 +1,4 @@
+{% for entry in entries %}
+	<button class="btn btn-info btn-lg finish{{entry.queueType}}" id="{{entry.myNumber}}"><span>#{{entry.myNumber}}. {{entry.personID}}</span></button>
+{% endfor %}
+
